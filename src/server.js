@@ -1,11 +1,15 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import { logger } from './middlewares/logger.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 // import contactsRouter from './routers/contactsRouter.js';
 import router from './routers/index.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import cookieParser from 'cookie-parser';
+import { UPLOAD_DIR } from './constants/index.js';
+
+dotenv.config();
 
 export const setupServer = () => {
   const app = express();
@@ -19,6 +23,8 @@ export const setupServer = () => {
 
   app.use(notFoundHandler);
   app.use(errorHandler);
+
+  app.use('/uploads', express.static(UPLOAD_DIR));
 
   const port = Number(process.env.PORT) || 3000;
 
