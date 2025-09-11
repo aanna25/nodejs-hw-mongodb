@@ -8,15 +8,15 @@ properties:
   _id:
     description: "Contact's id"
     type: string
-    example: 6894bf220e3fff20412e39a6
+    example: '6894bf220e3fff20412e39a6'
   name:
     description: "Contact's name"
     type: string
     example: 'Yulia Shevchenko'
   phoneNumber:
     description: "Contact's phoneNumber"
-    type: number
-    example: +380000000001
+    type: string
+    example: '+380000000001'
   contactType:
     description: "Contact's contactType"
     type: string
@@ -24,7 +24,7 @@ properties:
   userId:
     description: 'Contact user id'
     type: string
-    example: 6894bf220e3fff20412e39a6
+    example: '6894bf220e3fff20412e39a6'
   email:
     description: "Contact's email"
     type: string
